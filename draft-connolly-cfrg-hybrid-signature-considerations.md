@@ -9,7 +9,7 @@ number:
 date:
 consensus: true
 v: 3
-area: IRTF
+area: "IRTF"
 workgroup: "Crypto Forum"
 keyword:
  - post-quantum
@@ -20,7 +20,7 @@ venue:
   group: "Crypto Forum"
   type: "Research Group"
   mail: "cfrg@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/search/?email_list=cfrg"
+  arch: "https://mailarchive.ietf.org/arch/browse/cfrg"
   github: "dconnolly/draft-connolly-cfrg-hybrid-signature-considerations"
   latest: "https://dconnolly.github.io/draft-connolly-cfrg-hybrid-signature-considerations/draft-connolly-cfrg-hybrid-signature-considerations.html"
 
