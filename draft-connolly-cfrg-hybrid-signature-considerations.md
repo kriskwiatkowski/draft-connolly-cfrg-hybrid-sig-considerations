@@ -36,14 +36,14 @@ author:
 
 normative:
 
-  FIPS.204:
+  FIPS204:
     title: "Module-Lattice-Based Digital Signature Standard"
     date: August 13, 2024
     author:
       org: "National Institute of Standards and Technology (NIST)"
     target: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf
 
-  FIPS.205:
+  FIPS205:
     title: "Stateless Hash-Based Digital Signature Standard"
     date: August 13, 2024
     author:
@@ -139,7 +139,7 @@ SE, but the SE never has to buffer the entire message itself, and can operate
 on the message stream only.  <!-- TODO: I basically just pulled that out of a -->
 <!-- hat, we should look if there is academic literature on it. -->
 
-### Security Considerations for ML-DSA {#ml-dsa}
+## Security Considerations for ML-DSA {#ml-dsa}
 
 ML-DSA allows for both streaming and prehashing messages. For prehashing,
 this uses the comment on {{FIPS204}}, Algorithm 7, Line 6, and computes the
@@ -159,7 +159,7 @@ Since ML-DSA can be both prehashed and streamed, the HashML-DSA variation
 defined in {{FIPS204}} is superfluous and SHOULD NOT be used to reduce
 interoperability difficulties.
 
-### Security Considerations for SLH-DSA {#slh-dsa}
+## Security Considerations for SLH-DSA {#slh-dsa}
 
 SLH-DSA, standardized in {{FIPS205}}, does not allow for prehashing or
 streaming messages. The HashSLH-DSA variant defined in {{FIPS205}} MAY be
