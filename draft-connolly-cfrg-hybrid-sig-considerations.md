@@ -1,9 +1,9 @@
 ---
 title: Hybrid Signature Considerations
-abbrev: hybrid-signature-considerations
+abbrev: hybrid-sig-considerations
 category: info
 
-docname: draft-connolly-cfrg-hybrid-signature-considerations-latest
+docname: draft-connolly-cfrg-hybrid-sig-considerations-latest
 submissiontype: IRTF
 number:
 date:
@@ -21,8 +21,8 @@ venue:
   type: "Research Group"
   mail: "cfrg@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/cfrg"
-  github: "dconnolly/draft-connolly-cfrg-hybrid-signature-considerations"
-  latest: "https://dconnolly.github.io/draft-connolly-cfrg-hybrid-signature-considerations/draft-connolly-cfrg-hybrid-signature-considerations.html"
+  github: "dconnolly/draft-connolly-cfrg-hybrid-sig-considerations"
+  latest: "https://dconnolly.github.io/draft-connolly-cfrg-hybrid-sig-considerations/draft-connolly-cfrg-hybrid-sig-considerations.html"
 
 author:
  -
@@ -87,7 +87,7 @@ informative:
 
   I-D.ietf-pquip-pqt-hybrid-terminology:
 
-  I-D.ietf-pquip-pqt-hybrid-signature-spectrums:
+  I-D.ietf-pquip-hybrid-signature-spectrums:
 
   I-D.ietf-lamps-pq-composite-sigs:
 
