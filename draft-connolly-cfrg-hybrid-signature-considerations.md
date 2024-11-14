@@ -94,6 +94,22 @@ informative:
 
 --- abstract
 
+This document discusses how and when to use hybrid post-quantum/traditional
+signatures, and when not to, including prehashing and key use.
+
+--- middle
+
+# Introduction {#intro}
+
+This document discusses how and when to use hybrid post-quantum/traditional
+signatures, and when not to, including prehashing and key use.
+
+# Conventions and Definitions {#conventions}
+
+{::boilerplate bcp14-tagged}
+
+# Specific Recommendations {#recommendations}
+
 Working Groups SHOULD enable the use of ML-DSA signatures, as well as SLH-DSA
 signatures and MAY enable the use of HashSLH-DSA signatures.
 
@@ -106,21 +122,7 @@ It is NOT RECOMMENDED to use hybrid signatures, except for rare
 circumstances, and implementors MUST be warned to not reusing old key
 material in a hybrid.
 
---- middle
-
-# Introduction {#intro}
-
-TODO Introduction
-
-# Conventions and Definitions {#conventions}
-
-{::boilerplate bcp14-tagged}
-
 # Security Considerations {#security-considerations}
-
-<!-- TODO: Decide whether this should be security considerations or in a
-different --> <!-- section of the doc.  It's basically the only content of
-the doc, and it is a --> <!-- consideration about security. -->
 
 ## Prehashing {#prehashing}
 
@@ -134,13 +136,13 @@ signature.
 In some designs, the signature is computed in a streaming manner, i.e. the ME
 first opens a stream to the SE, and then streams the entire message to the
 SE, but the SE never has to buffer the entire message itself, and can operate
-on the message stream only.  (TODO: I basically just pulled that out of a
-hat, we should look if there is academic literature on it).
+on the message stream only.  <!-- TODO: I basically just pulled that out of a -->
+<!-- hat, we should look if there is academic literature on it. -->
 
 ### Security Considerations for ML-DSA {#ml-dsa}
 
 ML-DSA allows for both streaming and prehashing messages. For prehashing,
-this uses the comment on [FIPS204] Algorithm 7 Line 6 and computes the
+this uses the comment on {{FIPS204}}, Algorithm 7, Line 6, and computes the
 message representative `mu` in the ME as:
 
 ~~~
@@ -154,21 +156,21 @@ For streaming, the SE can accumulate the message by updating the SHAKE256
 state, only having to keep track of the state.
 
 Since ML-DSA can be both prehashed and streamed, the HashML-DSA variation
-defined in [FIPS204] is superfluous and SHOULD NOT be used to reduce
+defined in {{FIPS204}} is superfluous and SHOULD NOT be used to reduce
 interoperability difficulties.
 
 ### Security Considerations for SLH-DSA {#slh-dsa}
 
-SLH-DSA does not allow for prehashing or streaming messages. The HashSLH-DSA
-variant defined in [FIPS205] MAY be used to allow for prehashing and
-streaming. Alternatively, working groups can design protocols in such a
-fashion that any message that has to be signed is small enough to be
-transmitted over the network or be held in the memory of a HSM.  If
-HashSLH-DSA is used, the hash function used for the prehash MUST be part of
-the public key. It is RECOMMENDED to use the same hash function for the
-prehash as is used for the rest of SLH-DSA, but the hash function MUST have
-collision resistance on par with the security level. (TODO maybe add a list
-instead of leaving it like this)
+SLH-DSA, standardized in {{FIPS205}}, does not allow for prehashing or
+streaming messages. The HashSLH-DSA variant defined in {{FIPS205}} MAY be
+used to allow for prehashing and streaming. Alternatively, working groups can
+design protocols in such a fashion that any message that has to be signed is
+small enough to be transmitted over the network or be held in the memory of a
+HSM.  If HashSLH-DSA is used, the hash function used for the prehash MUST be
+part of the public key. It is RECOMMENDED to use the same hash function for
+the prehash as is used for the rest of SLH-DSA, but the hash function MUST
+have collision resistance on par with the security level. (TODO maybe add a
+list instead of leaving it like this)
 
 In order to increase interoperability, it is RECOMMENDED to reduce the
 overall number of variants, and only pick to support either SLH-DSA or
@@ -203,7 +205,7 @@ public key, and not hardcode it or dynamically negogiate it, which would then
 allow the migration to a new algorithm.
 
 The benefit of this approach is that it works both in a prequantum and in a
-postquantum world, since it is agnostic of the type of breakage of the
+post-quantum world, since it is agnostic of the type of breakage of the
 algorithm, so designing protocols in this fashion also makes them robust for
 the future.
 
