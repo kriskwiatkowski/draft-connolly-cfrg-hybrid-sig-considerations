@@ -168,7 +168,7 @@ streaming messages. The HashSLH-DSA variant defined in {{FIPS205}} MAY be
 used to allow for prehashing and streaming. Alternatively, working groups can
 design protocols in such a fashion that any message that has to be signed is
 small enough to be transmitted over the network or be held in the memory of a
-HSM.  If HashSLH-DSA is used, identifier of the hash function used for the prehash
+HSM.  If HashSLH-DSA is used, the identifier of the hash function used for the prehash
 MUST be part of the public key. It is RECOMMENDED to use the same hash function for
 the prehash as is used for the rest of SLH-DSA, but the hash function MUST
 have collision resistance on par with the security level. (TODO maybe add a
